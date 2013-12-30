@@ -10,12 +10,11 @@
 #
 # -- END LICENSE BLOCK ------------------------------------*/
 if (!defined('DC_RC_PATH')) { return; }
-require_once 'ConstMTS.php';
 $this->registerModule(
 	/* Name */			  'Mobile Theme Switcher',
 	/* Description*/	'Mobile Theme Switcher',
 	/* Author */		  'Noel Guilbert, Pierre Van Glabeke, Bernard Le Roux',
-	/* Version */		  ConstMTS::VERSION,
+	/* Version */		  '0.3',
 	/* Properties */
 	array(
 		'permissions' => 'usage,contentadmin',
