@@ -13,7 +13,7 @@ Ce plugin a été testé avec la version 2.6 de [Dotclear] (http://fr.dotclear.o
 
 Auteurs
 =======
-Noel Guilbert, Pierre Van Glabeke, Bernard Le Roux
+Noël Guilbert, Pierre Van Glabeke, Bernard Le Roux
 
 Licence
 ===================
