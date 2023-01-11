@@ -1,26 +1,29 @@
 <?php
-/* -- BEGIN LICENSE BLOCK ----------------------------------
-#
-# This file is part of Mobile Theme Switcher, a plugin for Dotclear 2.
-#
-# Copyright (c) 2013 Noel Guilbert, Pierre Van Glabeke, Bernard Le Roux
-# Licensed under the GPL version 2.0 license.
-# See LICENSE file or
-# http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
-#
-# -- END LICENSE BLOCK ------------------------------------*/
+/**
+ * @brief Mobile Theme Switcher, a plugin for Dotclear 2
+ *
+ * @package Dotclear
+ * @subpackage Plugin
+ *
+ * @author Noel Guilbert, Pierre Van Glabeke, Bernard Le Roux and contributors
+ *
+ * @copyright GPL-2.0 https://www.gnu.org/licenses/gpl-2.0.html
+ */
 if (!defined('DC_RC_PATH')) { return; }
+
 $this->registerModule(
-	/* Name */			  'Mobile Theme Switcher',
-	/* Description*/	'Mobile Theme Switcher',
-	/* Author */		  'Noel Guilbert, Pierre Van Glabeke, Bernard Le Roux',
-	/* Version */		  '0.3',
-	/* Properties */
-	array(
-		'permissions' => 'usage,contentadmin',
-		'type' => 'plugin',
-		'dc_min' => '2.6',
-		'support' => 'http://forum.dotclear.org/viewtopic.php?id=37738',
-		'details' => 'http://plugins.dotaddict.org/dc2/details/mobileThemeSwitcher'
-	)
+    'mobileThemeSwitcher',
+    'Mobile Theme Switcher',
+    'Noel Guilbert, Pierre Van Glabeke, Bernard Le Roux and contributors',
+    '0.4-dev',
+    [
+        'requires'    => [['core', '2.24']],
+        'permissions' => dcCore::app()->auth->makePermissions([
+            dcAuth::PERMISSION_USAGE,
+            dcAuth::PERMISSION_CONTENT_ADMIN,
+        ]),
+        'type'       => 'plugin',
+        'support'    => 'http://forum.dotclear.org/viewtopic.php?id=37738',
+        'details'    => 'https://plugins.dotaddict.org/dc2/details/' . basename(__DIR__),
+    ]
 );

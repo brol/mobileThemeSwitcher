@@ -11,17 +11,16 @@
 # -- END LICENSE BLOCK ------------------------------------*/
 if (!defined('DC_RC_PATH')) { return; }
 
-$core->addBehavior('publicPrepend',array('mobileThemeSwitcherBehaviors','changeTheme'));
-$core->tpl->addValue('FullVersion', array('tplMobileThemeSwitcher', 'linkToFullVersion'));
-$core->tpl->addValue('MobileVersion', array('tplMobileThemeSwitcher', 'linkToMobileVersion'));
+dcCore::app()->addBehavior('publicPrependV2',array('mobileThemeSwitcherBehaviors','changeTheme'));
+dcCore::app()->tpl->addValue('FullVersion', array('tplMobileThemeSwitcher', 'linkToFullVersion'));
+dcCore::app()->tpl->addValue('MobileVersion', array('tplMobileThemeSwitcher', 'linkToMobileVersion'));
 
 class mobileThemeSwitcherBehaviors
 {
-  public static function changeTheme ($core)
+  public static function changeTheme ()
   {
-    global $__theme;
     $theme = null;
-    $cookieName = 'dc_standard_theme_'.$core->blog->id;
+    $cookieName = 'dc_standard_theme_'.dcCore::app()->blog->id;
 
     if (isset($_COOKIE[$cookieName]))
     {
@@ -30,18 +29,18 @@ class mobileThemeSwitcherBehaviors
 
     if (isset($_GET['dc_standard_theme']))
     {
-      $theme = $core->blog->settings->system->theme;
+      $theme = dcCore::app()->blog->settings->system->theme;
     }
     elseif (self::isMobileDevice() || isset($_GET['dc_mobile_theme']))
     {
-      $theme = $core->blog->settings->mobileThemeSwitcher->mobileThemeSwitcher_theme;
+      $theme = dcCore::app()->blog->settings->mobileThemeSwitcher->mobileThemeSwitcher_theme;
     }
 
-    if ($theme && $core->themes->moduleExists($theme))
+    if ($theme && dcCore::app()->themes->moduleExists($theme))
     {
       setcookie($cookieName, $theme, strtotime('+3 month'), '/', '');
-      $__theme = $theme;
-      $core->blog->settings->system->theme = $__theme;
+      dcCore::app()->public->theme = $theme;
+      dcCore::app()->blog->settings->system->theme = dcCore::app()->public->theme;
     }
   }
 
