@@ -9,7 +9,7 @@ La sélection du thème servant aux mobiles s'effectue dans les paramètres du b
 Compatibilité
 ============
 
-Ce plugin a été testé avec la version 2.6 de [Dotclear] (http://fr.dotclear.org/).
+Ce plugin a été testé avec la version 2.24 de [Dotclear] (http://fr.dotclear.org/).
 
 Auteurs
 =======
