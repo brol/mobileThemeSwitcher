@@ -23,6 +23,9 @@ $this->registerModule(
             dcAuth::PERMISSION_CONTENT_ADMIN,
         ]),
         'type'       => 'plugin',
+        'settings' => [
+            'blog' => '#params.mobileThemeSwitcher_params',
+        ],
         'support'    => 'http://forum.dotclear.org/viewtopic.php?id=37738',
         'details'    => 'https://plugins.dotaddict.org/dc2/details/' . basename(__DIR__),
     ]

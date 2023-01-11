@@ -1,23 +1,34 @@
+# Language: Français
+# Module: mobileThemeSwitcher - 0.4-dev
+# Date: 2023-01-11 14:14:52
+# Author: Pierre Van Glabeke
+# Translated with translater 2022.12.26
+
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Project-Id-Version: mobileThemeSwitcher 0.4-dev\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: brol <contact@brol.info>\n"
+"PO-Revision-Date: 2023-01-11T14:14:52+00:00\n"
+"Last-Translator: Pierre Van Glabeke\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.7\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+#: _admin.php:29
 msgid "Mobile Theme Switcher"
 msgstr "Gestionnaire de thème mobile"
 
+#: _admin.php:30
+msgid "Mobile theme:"
+msgstr "Thème mobile :"
+
+#: _public.php:78
 msgid "Full Version"
 msgstr "Version complete"
 
+#: _public.php:83
 msgid "Mobile Version"
 msgstr "Version mobile"
 
-msgid "Mobile theme: "
-msgstr "Thème mobile : "

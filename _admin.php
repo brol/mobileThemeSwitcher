@@ -1,14 +1,14 @@
 <?php
-/* -- BEGIN LICENSE BLOCK ----------------------------------
-#
-# This file is part of Mobile Theme Switcher, a plugin for Dotclear 2.
-#
-# Copyright (c) 2013 Noel Guilbert, Pierre Van Glabeke, Bernard Le Roux
-# Licensed under the GPL version 2.0 license.
-# See LICENSE file or
-# http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
-#
-# -- END LICENSE BLOCK ------------------------------------*/
+/**
+ * @brief Mobile Theme Switcher, a plugin for Dotclear 2
+ *
+ * @package Dotclear
+ * @subpackage Plugin
+ *
+ * @author Noel Guilbert, Pierre Van Glabeke, Bernard Le Roux and contributors
+ *
+ * @copyright GPL-2.0 https://www.gnu.org/licenses/gpl-2.0.html
+ */
 if (!defined('DC_CONTEXT_ADMIN')) { return; }
 
 dcCore::app()->addBehavior('adminBlogPreferencesFormV2',array('mobileThemeSwitcherAdminBehaviours','adminBlogPreferencesForm'));
@@ -26,7 +26,7 @@ class mobileThemeSwitcherAdminBehaviours
         $themes[$dir->getFilename()] = $dir->getFilename();
       }
     }
-    echo '<div class="fieldset"><h4>'.__('Mobile Theme Switcher').'</h4>'.
+    echo '<div class="fieldset"><h4 id="mobileThemeSwitcher_params">'.__('Mobile Theme Switcher').'</h4>'.
     '<p><label class="classic">'.__('Mobile theme: ').'</label>'.
     form::combo('mobileThemeSwitcher_theme', $themes, $settings->mobileThemeSwitcher->mobileThemeSwitcher_theme).
     '</p></div>';
