@@ -12,24 +12,13 @@
 
 if (!defined('DC_CONTEXT_ADMIN')) { return; }
  
-# On lit la version du plugin
-$m_version = $core->plugins->moduleInfo('mobileThemeSwitcher','version');
- 
-# On lit la version du plugin dans la table des versions
-$i_version = $core->getVersion('mobileThemeSwitcher');
- 
 # La version dans la table est supérieure ou égale à
 # celle du module, on ne fait rien puisque celui-ci
 # est installé
-if (version_compare($i_version,$m_version,'>=')) {
+if (!dcCore::app()->newVersion(basename(__DIR__), dcCore::app()->plugins->moduleInfo(basename(__DIR__), 'version'))) {
   return;
 }
 
 # Création du setting (s'il existe, il ne sera pas écrasé)
-$settings = new dcSettings($core,null);
-$settings->addNamespace('mobileThemeSwitcher');
-$settings->mobileThemeSwitcher->put('mobileThemeSwitcher_theme', null, 'string', 'mobileThemeSwitcher theme', false, true);
-
- 
-# La procédure d'installation commence vraiment là
-$core->setVersion('mobileThemeSwitcher',$m_version);
+dcCore::app()->blog->settings->addNamespace('mobileThemeSwitcher');
+dcCore::app()->blog->settings->mobileThemeSwitcher->put('mobileThemeSwitcher_theme', null, 'string', 'mobileThemeSwitcher theme', false, true);

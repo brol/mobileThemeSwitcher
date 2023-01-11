@@ -11,15 +11,15 @@
 # -- END LICENSE BLOCK ------------------------------------*/
 if (!defined('DC_CONTEXT_ADMIN')) { return; }
 
-$core->addBehavior('adminBlogPreferencesForm',array('mobileThemeSwitcherAdminBehaviours','adminBlogPreferencesForm'));
-$core->addBehavior('adminBeforeBlogSettingsUpdate',array('mobileThemeSwitcherAdminBehaviours','adminBeforeBlogSettingsUpdate'));
+dcCore::app()->addBehavior('adminBlogPreferencesFormV2',array('mobileThemeSwitcherAdminBehaviours','adminBlogPreferencesForm'));
+dcCore::app()->addBehavior('adminBeforeBlogSettingsUpdate',array('mobileThemeSwitcherAdminBehaviours','adminBeforeBlogSettingsUpdate'));
 
 class mobileThemeSwitcherAdminBehaviours
 {
-  public static function adminBlogPreferencesForm($core, $settings)
+  public static function adminBlogPreferencesForm($settings)
   {
     $themes = array('' => '');
-    foreach (new DirectoryIterator(path::fullFromRoot($core->blog->settings->system->themes_path,DC_ROOT)) as $dir)
+    foreach (new DirectoryIterator(path::fullFromRoot(dcCore::app()->blog->settings->system->themes_path,DC_ROOT)) as $dir)
     {
       if ($dir->isDir() && ! $dir->isDot())
       {
